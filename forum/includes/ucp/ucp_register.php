@@ -40,7 +40,7 @@ class ucp_register
 		}
 
 		$coppa			= $request->is_set('coppa') ? (int) $request->variable('coppa', false) : false;
-		$agreed			= $request->variable('agreed', false);
+		$agreed			= 1; $request->variable('agreed', false);
 		$submit			= $request->is_set_post('submit');
 		$change_lang	= request_var('change_lang', '');
 		$user_lang		= request_var('lang', $user->lang_name);
@@ -410,7 +410,7 @@ class ucp_register
 					}
 				}
 
-				$message = $message . '<br /><br />' . sprintf($user->lang['RETURN_INDEX'], '<a href="' . append_sid("{$phpbb_root_path}index.$phpEx") . '">', '</a>');
+				$message = $message . '<br /><br />' . sprintf($user->lang['RETURN_INDEX'], '<a href="' . append_sid("index.$phpEx") . '">', '</a>');
 				trigger_error($message);
 			}
 		}

@@ -1,32 +1,31 @@
-<?php
 
-// get some functions from phpBB3
-define(‘IN_PHPBB’, true);
-$phpbb_root_path = ‘forum/';
-$phpEx = substr(strrchr(__FILE__, ‘.’), 1);
-include($phpbb_root_path . ‘common.’ . $phpEx);
+<form name="register" action="forum/ucp.php?mode=register" method="post">
+	<table width="510" border="0">
+		<tr>
+			<td colspan="2"><p><strong>Registration Form</strong></p></td>
+		</tr>
+		<tr>
+			<td>Username:</td>
+			<td><input type="text" name="username" maxlength="20" /></td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><input type="password" name="new_password" /></td>
+		</tr>
+		<tr>
+			<td>Confirm Password:</td>
+			<td><input type="password" name="password_confirm" /></td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><input type="text" name="email" id="email" /></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><input type="submit" value="Register" /></td>
+		</tr>
+	</table>
+</form>
 
-// Start session management
-$user->session_begin();
-$auth->acl($user->data);
-include($phpbb_root_path .’includes/functions_user.php’);
-//$user->setup();
+</div>
 
-$user_row = array(
-‘username’ => ‘testtest’,
-‘user_password’ => md5(‘test’),
-‘user_email’ => ‘test@test.com’,
-‘group_id’ => 2,
-‘user_timezone’ => 0,
-‘user_dst’ => 1,
-‘user_lang’ => ‘en’,
-‘user_type’ => 0,
-‘user_actkey’ => ”,
-‘user_dateformat’ => ‘D M d, Y g:i a’,
-‘user_style’ => 1,
-‘user_regdate’ => time(),
-);
-/* Now Register user */
-$phpbb_user_id = user_add($user_row);
-echo $phpbb_user_id.’ finished';
-?>

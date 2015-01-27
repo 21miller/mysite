@@ -16,5 +16,4 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 date_default_timezone_set('America/Los_Angeles');
 
 
-$user = new User($db); 
 ?>
