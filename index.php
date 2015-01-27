@@ -40,7 +40,6 @@
                 </div> <!-- /.logo -->
                 <div class="social-top col-md-6 col-sm-6">
                     <ul>
-                       
                     </ul>
                 </div> <!-- /.social-top -->
             </div> <!-- /.top-header -->
@@ -63,24 +62,22 @@
                     <div class="menu-wrapper col-md-9 col-sm-6 col-xs-4">
                         <a href="#" class="toggle-menu visible-sm visible-xs"><i class="fa fa-bars"></i></a>
                         <ul class="sf-menu hidden-xs hidden-sm">
-                            <li class="active"><a href="index.html">Home</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><?php include "login.php" ?></li>
+                            <li class="active"><a href="index.php">Home</a></li>
+                            <li><a>text</a></li>
                             <li>text</li>
                             <li>text</li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><p><?php require("login.php"); ?></p></li>
                         </ul>
                     </div> <!-- /.menu-wrapper -->
                 </div> <!-- /.row -->
             </div> <!-- /.main-header -->
             <div id="responsive-menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="#">Projects</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="#">Services</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Pages</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><p><?php require("login.php"); ?></p></li>
                 </ul>
             </div>
         </header> <!-- /.site-header -->
