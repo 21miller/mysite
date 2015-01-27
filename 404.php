@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Artcore - Responsive HTML5 Template</title>
+        <title>Artcore - 404 Error Page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -27,7 +27,6 @@
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
 
-
         <section id="pageloader">
             <div class="loader-item fa fa-spin colored-border"></div>
         </section> <!-- /#pageloader -->
@@ -35,19 +34,24 @@
         <header class="site-header container-fluid">
             <div class="top-header">
                 <div class="logo col-md-6 col-sm-6">
-                    <h1><a href="index.html"><em>NEWB</em>Squad</a></h1>
+                    <h1><a href="index.html"><em>Art</em>Core</a></h1>
                     <span>Responsive HTML5 Template</span>
                 </div> <!-- /.logo -->
                 <div class="social-top col-md-6 col-sm-6">
                     <ul>
-                       
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                        <li><a href="#" class="fa fa-google-plus"></a></li>
+                        <li><a href="#" class="fa fa-flickr"></a></li>
+                        <li><a href="#" class="fa fa-rss"></a></li>
                     </ul>
                 </div> <!-- /.social-top -->
             </div> <!-- /.top-header -->
             <div class="main-header">
                 <div class="row">
                     <div class="main-header-left col-md-3 col-sm-6 col-xs-8">
-                        
+                        <a id="search-icon" class="btn-left fa fa-search" href="#search-overlay"></a>
                         <div id="search-overlay">
                             <a href="#search-overlay" class="close-search"><i class="fa fa-times-circle"></i></a>
                             <div class="search-form-holder">
@@ -57,17 +61,33 @@
                                 </form>
                             </div>
                         </div><!-- #search-overlay -->
-                        <a href="#" class="btn-left arrow-left fa fa-angle-left"></a>
-                        <a href="#" class="btn-left arrow-right fa fa-angle-right"></a>
                     </div> <!-- /.main-header-left -->
                     <div class="menu-wrapper col-md-9 col-sm-6 col-xs-4">
                         <a href="#" class="toggle-menu visible-sm visible-xs"><i class="fa fa-bars"></i></a>
                         <ul class="sf-menu hidden-xs hidden-sm">
-                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="index.html">Home</a></li>
                             <li><a href="services.html">Services</a></li>
-                            <li><?php include :"login.php" ?></li>
-                            <li>text</li>
-                            <li>text</li>
+                            <li><a href="#">Projects</a>
+                                <ul>
+                                    <li><a href="projects-2.html">Two Columns</a></li>
+                                    <li><a href="projects-3.html">Three Columns</a></li>
+                                    <li><a href="project-details.html">Project Single</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Blog</a>
+                                <ul>
+                                    <li><a href="blog.html">Blog Masonry</a></li>
+                                    <li><a href="blog-single.html">Post Single</a></li>
+                                </ul>
+                            </li>
+                            <li class="active"><a href="#">Pages</a>
+                                <ul>
+                                    <li><a href="our-team.html">Our Team</a></li>
+                                    <li><a href="archives.html">Archives</a></li>
+                                    <li><a href="grids.html">Columns</a></li>
+                                    <li><a href="404.html">404 Page</a></li>
+                                </ul>
+                            </li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </div> <!-- /.menu-wrapper -->
@@ -102,45 +122,28 @@
                 </ul>
             </div>
         </header> <!-- /.site-header -->
-        
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
 
-                <div class="swiper-slide" style="background-image: url(images/slide1.jpg);">
-                    <div class="overlay-s"></div>
-                    <div class="slider-caption">
-                        <div class="inner-content">
-                            <h2>Earth New House Project</h2>
-                            <p>Artcore is free HTML5 template by <b class="blue">template</b><b class="green">mo</b>. Credit goes to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for photos.</p>
-                            <a href="#" class="main-btn white">View Projects</a>
-                        </div> <!-- /.inner-content -->
-                    </div> <!-- /.slider-caption -->
-                </div> <!-- /.swier-slide -->
-
-                <div class="swiper-slide" style="background-image: url(images/slide2.jpg);">
-                    <div class="overlay-s"></div>
-                    <div class="slider-caption">
-                        <div class="inner-content">
-                            <h2>Hotel and Residence Concept in Montenegro</h2>
-                            <p>We come with new fresh and unique ideas.</p>
-                            <a href="#" class="main-btn white">View Projects</a>
-                        </div> <!-- /.inner-content -->
-                    </div> <!-- /.slider-caption -->
-                </div> <!-- /.swier-slide -->
-
-                <div class="swiper-slide" style="background-image: url(images/slide3.jpg);">
-                    <div class="overlay-s"></div>
-                    <div class="slider-caption">
-                        <div class="inner-content">
-                            <h2>Natural 3d Architecture Design</h2>
-                            <p>Natural concrete is a material which is calm and clean.</p>
-                            <a href="#" class="main-btn white">View Projects</a>
-                        </div> <!-- /.inner-content -->
-                    </div> <!-- /.slider-caption -->
-                </div> <!-- /.swier-slide -->
-
-            </div> <!-- /.swiper-wrapper -->
-        </div> <!-- /.swiper-container -->
+        <div class="content-wrapper">
+            <div class="inner-container container">
+                <div class="row">
+                    <div class="section-header col-md-12">
+                        <h2>404 - Page Not Found !</h2>
+                    </div> <!-- /.section-header -->
+                </div> <!-- /.row -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box-content">
+                            <div class="text-center error-page">
+                                <h1>404</h1>
+                                <span>Page cannot be found in this website.</span>
+                                <p>Please try Navigation or Search to find what you are looking for!</p>
+                                <p><a href="index.html">&larr; Go back Home</a></p>
+                            </div> <!-- /.text-center -->
+                        </div> <!-- /.box-content -->
+                    </div> <!-- /.col-md-12 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.inner-content -->
+        </div> <!-- /.content-wrapper -->
 
         <script src="js/vendor/jquery-1.11.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
@@ -157,6 +160,6 @@
             })
             //]]>
         </script>
-        
+
     </body>
 </html>
