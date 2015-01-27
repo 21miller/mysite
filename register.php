@@ -11,6 +11,12 @@ $auth->acl($user->data);
 $user->setup(); ?>
 
 <?php
+if($user->data['is_registered'])
+{
+echo("<b>Hi " . $user->data['username'] . "!</b><br /><br /><a href='loggedout.php'>Logout</a>" );
+}
+else
+{
 echo(<form name="register" action="forum/ucp.php?mode=register" method="post" enctype="multipart/form-data">
 	<table width="510" border="0">
 		<tr>
