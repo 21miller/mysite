@@ -27,7 +27,7 @@ http://www.tooplate.com/view/2037-orange-sea
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <<?php include('register.php');?>
+                <<?php include('login.php');?>
             </ul>    	
         </div> <!-- end of tooplate_menu -->
     </div> <!-- end of forever header -->
