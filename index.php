@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Artcore - Responsive HTML5 Template</title>
+        <title>NEWB Squad - An EvE Online Corp</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -36,7 +36,7 @@
             <div class="top-header">
                 <div class="logo col-md-6 col-sm-6">
                     <h1><a href="index.html"><em>NEWB</em>Squad</a></h1>
-                    <span>Responsive HTML5 Template</span>
+                    <span>An EvE Online Corp</span>
                 </div> <!-- /.logo -->
                 <div class="social-top col-md-6 col-sm-6">
                     <ul>
