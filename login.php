@@ -27,12 +27,8 @@ echo("Hi " . $user->data['username'] . "!<a href=" . $phpbb_root_path . 'ucp.php
 }
 else
 {
-echo('You are Not Logged In <br><form action="forum/ucp.php" method="post" enctype="multipart/form-data">
-<p><label for="username">Username:</label><input type="text" name="username" /></p>
-<p><label for="password">Password:</label><input type="password" name="password" /></p>
-<p><input type="hidden" name="redirect" value="../index.php" /></p>
-<p><label for="username">Automatic login:</label><input type="checkbox" name="autologin" id="autologin" class="checkbox" /></p>
-<p><input type="submit" value="login" name="login" /></p>
+echo('<form action="forum/ucp.php" method="post" enctype="multipart/form-data">
+<p><label for="username">Username:</label><input type="text" name="username" /><label for="password">Password:</label><input type="password" name="password" /><input type="hidden" name="redirect" value="../index.php" /><label for="username">Automatic login:</label><input type="checkbox" name="autologin" id="autologin" class="checkbox" /><input type="submit" value="login" name="login" /></p>
 </form>');
 } ?>
 

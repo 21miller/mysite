@@ -40,6 +40,7 @@
                 </div> <!-- /.logo -->
                 <div class="social-top col-md-6 col-sm-6">
                     <ul>
+                    <?php include(login.php); ?>
                     </ul>
                 </div> <!-- /.social-top -->
             </div> <!-- /.top-header -->
@@ -63,10 +64,10 @@
                         <a href="#" class="toggle-menu visible-sm visible-xs"><i class="fa fa-bars"></i></a>
                         <ul class="sf-menu hidden-xs hidden-sm">
                             <li class="active"><a href="index.php">Home</a></li>
-                            <li><a>text</a></li>
-                            <li>text</li>
-                            <li>text</li>
-                            <li><p><?php require("login.php"); ?></p></li>
+                            <li><a> text </a></li>
+                            <li><a> text </a></li>
+                            <li><a> text </a></li>
+                            <li><a> text </a></li>
                         </ul>
                     </div> <!-- /.menu-wrapper -->
                 </div> <!-- /.row -->
@@ -74,10 +75,10 @@
             <div id="responsive-menu">
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Pages</a></li>
-                    <li><p><?php require("login.php"); ?></p></li>
+                    <li><a> text </a>/li>
+                    <li><a> text </a></li>
+                    <li><a> text </a></li>
+                    <li><a> text </a></li>
                 </ul>
             </div>
         </header> <!-- /.site-header -->
