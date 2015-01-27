@@ -1,36 +1,32 @@
 <?php
-//retrieve our data from POST
-$username = $_POST['username'];
-$password1 = $_POST['password1'];
-$password2 = $_POST['password2'];
-$email = $_POST['email'];
- 
-if($password1 != $password2)
-    header('Location: registration.php');
- 
-if(strlen($username) > 30)
-    header('Location: registration.php');
-$hash = hash('sha256', $password1);
- 
-function createSalt()
-{
-    $text = md5(uniqid(rand(), true));
-    return substr($text, 0, 3);
-}
- 
-$salt = createSalt();
-$password = hash('sha256', $salt . $hash);
-$conn = mysql_connect('localhost', 'Hashisx', 'd4gBreak1987!');
-mysql_select_db('login', $conn);
- 
-//sanitize username
-$username = mysql_real_escape_string($username);
- 
-$query = "INSERT INTO phpbb.phpbb_users ( username, user_password, user_email, user_form_salt )
-        VALUES ( '$username', '$password', '$email', '$salt' );";
-mysql_query($query);
- 
-mysql_close();
- 
-header('Location: index.php');
+
+// get some functions from phpBB3
+define(‘IN_PHPBB’, true);
+$phpbb_root_path = ‘forum/';
+$phpEx = substr(strrchr(__FILE__, ‘.’), 1);
+include($phpbb_root_path . ‘common.’ . $phpEx);
+
+// Start session management
+$user->session_begin();
+$auth->acl($user->data);
+include($phpbb_root_path .’includes/functions_user.php’);
+//$user->setup();
+
+$user_row = array(
+‘username’ => ‘testtest’,
+‘user_password’ => md5(‘test’),
+‘user_email’ => ‘test@test.com’,
+‘group_id’ => 2,
+‘user_timezone’ => 0,
+‘user_dst’ => 1,
+‘user_lang’ => ‘en’,
+‘user_type’ => 0,
+‘user_actkey’ => ”,
+‘user_dateformat’ => ‘D M d, Y g:i a’,
+‘user_style’ => 1,
+‘user_regdate’ => time(),
+);
+/* Now Register user */
+$phpbb_user_id = user_add($user_row);
+echo $phpbb_user_id.’ finished';
 ?>

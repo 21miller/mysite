@@ -22,7 +22,7 @@
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td><input type="submit" value="Register" /></td>
+			<td><input type="submit" value="forum/ucp.php?mode=register" /></td>
 		</tr>
 	</table>
 </form>
