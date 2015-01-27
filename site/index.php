@@ -8,7 +8,9 @@ include($phpbb_root_path . 'common.' . $phpEx);
 // Start session management
 $user->session_begin();
 $auth->acl($user->data);
-$user->setup(); ?>
+$user->setup(); ?> 
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
