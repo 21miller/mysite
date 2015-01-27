@@ -1,4 +1,4 @@
-\
+
 <?php
 define('IN_PHPBB', true);
 $phpbb_root_path = 'forum/';
@@ -22,7 +22,7 @@ $user->setup(); ?>
 <?php
 if($user->data['is_registered'])
 {
-echo("<b>Hi " . $user->data['username'] . "!</b><br /><br /><a href=" . $phpbb_root_path . 'ucp.php?mode=logout' . '&sid=' . $user->data['session_id'] . ">Logout</a>" );
+echo("<b>Hi " . $user->data['username'] . "!</b><br /><br /><a href='logout.php'>Logout</a>" );
 }
 else
 {
