@@ -22,18 +22,17 @@ $user->setup(); ?>
 <?php
 if($user->data['is_registered'])
 {
-    $user->session_kill();
-    $user->session_begin();
-
-    $redirect = request_var('redirect', "index.$phpEx");
-    meta_refresh(1, $redirect);
-    
-    trigger_error('LOGOUT_REDIRECT');
+echo("Hi " . $user->data['username'] . "!<br /><br /><a href=" . $phpbb_root_path . 'ucp.php?mode=logout' . '&sid=' . $user->data['session_id'] . ">Logout</a>");
+header("Location: index.php");
 }
 else
 {
-echo('<form action="forum/ucp.php" method="post" enctype="multipart/form-data">
-<p><label for="username">Username:</label><input type="text" name="username" /></ br><label for="password">Password:</label><input type="password" name="password" /><input type="hidden" name="redirect" value="../index.php" /></ br><label for="username">Automatic login:</label></ br><input type="checkbox" name="autologin" id="autologin" class="checkbox" /></ br><input type="submit" value="login" name="login" /></p>
+echo('Log In<br><form action="forum/ucp.php" method="post" enctype="multipart/form-data">
+<label for="username">Username:</label><input type="text" name="username" /><br />
+<label for="password">Password:</label><input type="password" name="password" /><br />
+<input type="hidden" name="redirect" value="../index.php" /><br />
+<label for="username">Automatic login:</label><input type="checkbox" name="autologin" id="autologin" class="checkbox" /><br />
+<input type="submit" value="login" name="login" />
 </form>');
 } ?>
 
