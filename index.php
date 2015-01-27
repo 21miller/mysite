@@ -1,15 +1,3 @@
-<?php
-
-define('IN_PHPBB', true);
-$phpbb_root_path = 'forum/';
-$phpEx = substr(strrchr(__FILE__, '.'), 1);
-include($phpbb_root_path . 'common.' . $phpEx);
-
-// Start session management
-$user->session_begin();
-$auth->acl($user->data);
-$user->setup(); ?> 
-
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
