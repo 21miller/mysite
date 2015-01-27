@@ -87,8 +87,8 @@
             <div class="inner-container container">
                 <div class="row">
                     <div class="section-header col-md-12">
-                        <h2>Project Detail</h2>
-                        <span>Subtitle Goes Here</span>
+                        <h2><?php include(logout.php) ?></h2>
+                        
                     </div> <!-- /.section-header -->
                 </div> <!-- /.row -->
                 <div class="project-detail row">
