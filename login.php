@@ -22,7 +22,7 @@ $user->setup(); ?>
 <?php
 if($user->data['is_registered'])
 {
-echo("<b>Hi " . $user->data['username'] . "!</b><br /><br /><a href='logout.php'>Logout</a>" );
+echo("<b>Hi " . $user->data['username'] . "!</b><br /><br /><a href='loggedout.php'>Logout</a>" );
 }
 else
 {

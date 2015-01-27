@@ -1,3 +1,12 @@
+<?php
+define('IN_PHPBB', true);
+$phpbb_root_path = 'forum/'; //the path to your phpbb relative to this script
+$phpEx = substr(strrchr(__FILE__, '.'), 1); //the file extension necessary
+include("forum/common.php"); //the path to your phpbb common relative to this script
+
+$user->session_kill();
+header( "refresh:5;url=index.php" );
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -13,7 +22,7 @@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,300,500,500italic,700,900">
         <!--
         Artcore Template
-        http://www.templatemo.com/preview/templatemo_423_artcore
+		http://www.templatemo.com/preview/templatemo_423_artcore
         -->
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/font-awesome.css">
@@ -40,7 +49,6 @@
                 </div> <!-- /.logo -->
                 <div class="social-top col-md-6 col-sm-6">
                     <ul>
-                    <?php include("login.php"); ?>
                     </ul>
                 </div> <!-- /.social-top -->
             </div> <!-- /.top-header -->
@@ -81,39 +89,13 @@
                     <li><a> text </a></li>
                 </ul>
             </div>
-        </header><!-- /.site-header -->
-
-        <div class="content-wrapper">
-            <div class="inner-container container">
-                <div class="row">
-                    <div class="section-header col-md-12">
-                        <h2><?php include(logout.php) ?></h2>
-                        
-                    </div> <!-- /.section-header -->
-                </div> <!-- /.row -->
-                <div class="project-detail row">
-                    <div class="project-slider col-md-12">
-                        <img src="images/projects/big_project_1.jpg" alt="Slide 1">
-                        <img src="images/projects/big_project_2.jpg" alt="Slide 2">
-                        <img src="images/projects/big_project_3.jpg" alt="Slide 1">
-                        <a href="#" class="slidesjs-previous slidesjs-navigation">&lt;</a> 
-                        <a href="#" class="slidesjs-next slidesjs-navigation">&gt;</a>
-                    </div> <!-- /.project-slider -->
-                    <div class="project-infos col-md-12">
-                        <div class="box-content">
-                            <h2 class="project-title">Lampyridae Lamps by Christina Welldone</h2>
-                            <span class="project-subtitle">Another Subtilte In Here</span>
-                            <p><a href="http://www.templatemo.com/preview/templatemo_423_artcore">Artcore</a> is free HTML5 bootstrap template by <b class="blue">template</b><b class="green">mo</b>. Credit goes to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for images used in this template. You can use this layout for your personal or commercial websites. Neque, quam, cum ut sapiente veniam ullam aspernatur modi repellat fugit quisquam maxime distinctio architecto aut suscipit recusandae nemo iusto inventore sunt amet nesciunt atque accusamus voluptatem molestias natus blanditiis. <br><br>Quos, atque, maxime, voluptates, voluptas praesentium qui quibusdam neque explicabo itaque harum voluptate aliquam dolore corporis quasi eaque laboriosam aspernatur. Repellat, animi, dolore harum laborum dicta fugit optio magni totam consectetur est vitae libero facere saepe cupiditate numquam dignissimos pariatur iusto temporibus delectus enim illo.</p>
-                            <ul class="project-meta">
-                                <li><i class="fa fa-folder-open"></i>Photography</li>
-                                <li><i class="fa fa-calendar-o"></i>31 October 2084</li>
-                                <li><i class="fa fa-envelope-o"></i><a href="mailto:info@company.com">info@company.com</a></li>
-                            </ul>
-                        </div> <!-- /.box-content -->
-                    </div> <!-- /.project-infos -->
-                </div> <!-- /.project-detail -->
-            </div> <!-- /.inner-content -->
-        </div> <!-- /.content-wrapper -->
+        </header> <!-- /.site-header -->
+        
+        <div>
+            <h2>
+<div align=center>Logged out successfully!</div>
+</h2>
+        </div> <!-- /.swiper-container -->
 
         <script src="js/vendor/jquery-1.11.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
@@ -133,3 +115,4 @@
         
     </body>
 </html>
+
