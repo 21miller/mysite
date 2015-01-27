@@ -1,3 +1,14 @@
+<?php
+
+define('IN_PHPBB', true);
+$phpbb_root_path = './forum/';
+$phpEx = substr(strrchr(__FILE__, '.'), 1);
+include($phpbb_root_path . 'common.' . $phpEx);
+
+// Start session management
+$user->session_begin();
+$auth->acl($user->data);
+$user->setup(); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -5,7 +16,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Artcore - Responsive HTML5 Template</title>
+        <title>NEWB Squad</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -35,24 +46,15 @@
         <header class="site-header container-fluid">
             <div class="top-header">
                 <div class="logo col-md-6 col-sm-6">
-                    <h1><a href="index.html"><em>Art</em>Core</a></h1>
-                    <span>Responsive HTML5 Template</span>
+                    <h1><a href="index.html"><em>NEWB</em>Squad</a></h1>
+                    <span>A EvE Online Corp</span>
                 </div> <!-- /.logo -->
-                <div class="social-top col-md-6 col-sm-6">
-                    <ul>
-                        <li><a href="#" class="fa fa-facebook"></a></li>
-                        <li><a href="#" class="fa fa-twitter"></a></li>
-                        <li><a href="#" class="fa fa-linkedin"></a></li>
-                        <li><a href="#" class="fa fa-google-plus"></a></li>
-                        <li><a href="#" class="fa fa-flickr"></a></li>
-                        <li><a href="#" class="fa fa-rss"></a></li>
-                    </ul>
-                </div> <!-- /.social-top -->
+             
             </div> <!-- /.top-header -->
             <div class="main-header">
                 <div class="row">
                     <div class="main-header-left col-md-3 col-sm-6 col-xs-8">
-                        <a id="search-icon" class="btn-left fa fa-search" href="#search-overlay"></a>
+                        
                         <div id="search-overlay">
                             <a href="#search-overlay" class="close-search"><i class="fa fa-times-circle"></i></a>
                             <div class="search-form-holder">
@@ -91,7 +93,7 @@
                                     <li><a href="404.html">404 Page</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><?php include('register.php');?></li>
                         </ul>
                     </div> <!-- /.menu-wrapper -->
                 </div> <!-- /.row -->
@@ -135,7 +137,7 @@
                         <div class="inner-content">
                             <h2>Earth New House Project</h2>
                             <p>Artcore is free HTML5 template by <b class="blue">template</b><b class="green">mo</b>. Credit goes to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for photos.</p>
-                            <a href="#" class="main-btn white">View Projects</a>
+                            
                         </div> <!-- /.inner-content -->
                     </div> <!-- /.slider-caption -->
                 </div> <!-- /.swier-slide -->
@@ -146,7 +148,7 @@
                         <div class="inner-content">
                             <h2>Hotel and Residence Concept in Montenegro</h2>
                             <p>We come with new fresh and unique ideas.</p>
-                            <a href="#" class="main-btn white">View Projects</a>
+                            
                         </div> <!-- /.inner-content -->
                     </div> <!-- /.slider-caption -->
                 </div> <!-- /.swier-slide -->
@@ -157,7 +159,7 @@
                         <div class="inner-content">
                             <h2>Natural 3d Architecture Design</h2>
                             <p>Natural concrete is a material which is calm and clean.</p>
-                            <a href="#" class="main-btn white">View Projects</a>
+                            
                         </div> <!-- /.inner-content -->
                     </div> <!-- /.slider-caption -->
                 </div> <!-- /.swier-slide -->
