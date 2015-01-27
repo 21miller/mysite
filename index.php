@@ -20,14 +20,15 @@ http://www.tooplate.com/view/2037-orange-sea
 	<div id="tooplate_top"></div>
 
 	<div id="tooplate_header">
-        <div id="site_title"><h1><a href="#">Orange Sea</a></h1></div>
+        <div id="site_title"><div class="top-header">
+                <div class="logo col-md-6 col-sm-6">
+                    <h1>Art</em>Core</a></h1></div>
         <div id="tooplate_menu">
             <ul>
                 <li><a href="index.html" class="current">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <<?php include('login.php');?>
             </ul>    	
         </div> <!-- end of tooplate_menu -->
     </div> <!-- end of forever header -->
@@ -35,11 +36,9 @@ http://www.tooplate.com/view/2037-orange-sea
     <div id="tooplate_middle">
     	<img src="images/tooplate_icon.png" alt="Image" />
     	<div id="mid_title">
-        	Welcome to Orange Sea!	
+        	Login To NEWB Squad	
         </div>
-        <p>Pellentesque in orci enim. Duis quis odio quam, at faucibus est. Donec a molestie felis. Sed semper venenatis posuere. Sed eu massa elit, id mollis neque.</p>
-        <div id="learn_more"><a href="#"></a></div>
-        <div class="cleaner"></div>
+        <p><?php include('login.php');?></p>
 	</div> <!-- end of middle -->
     
     <div id="tooplate_main">

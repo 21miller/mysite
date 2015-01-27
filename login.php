@@ -24,16 +24,16 @@ $user->setup(); ?>
 
 if($user->data['is_registered'])
 {
-echo("Hi " . $user->data['username'] . "!<br /><br /><a href=" . $phpbb_root_path . 'ucp.php?mode=logout&redirect=index.php' . '&sid=' . $user->data['session_id'] . ">Logout</a>");
+echo("Hi " . $user->data['username'] . "!<a href=" . $phpbb_root_path . 'ucp.php?mode=logout' . '&sid=' . $user->data['session_id'] . ">Logout</a>");
 }
 else
 {
 echo('You are Not Logged In <br><form action="forum/ucp.php" method="post" enctype="multipart/form-data">
-<label for="username">Username:</label><input type="text" name="username" /><br />
-<label for="password">Password:</label><input type="password" name="password" /><br />
-<input type="hidden" name="redirect" value="../index.php" />
-<label for="username">Automatic login:</label><input type="checkbox" name="autologin" id="autologin" class="checkbox" />
-<input type="submit" value="login" name="login" />
+<p><label for="username">Username:</label><input type="text" name="username" /></p>
+<p><label for="password">Password:</label><input type="password" name="password" /></p>
+<p><input type="hidden" name="redirect" value="../index.php" /></p>
+<p><label for="username">Automatic login:</label><input type="checkbox" name="autologin" id="autologin" class="checkbox" /></p>
+<p><input type="submit" value="login" name="login" /></p>
 </form>');
 } ?>
 
