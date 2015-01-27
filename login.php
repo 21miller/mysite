@@ -20,10 +20,15 @@ $user->setup(); ?>
 
 <body>
 <?php
-
 if($user->data['is_registered'])
 {
-echo("Hi " . $user->data['username'] . "!<a href=" . $phpbb_root_path . 'ucp.php?mode=logout' . '&sid=' . $user->data['session_id'] . ">Logout</a>");
+    $user->session_kill();
+    $user->session_begin();
+
+    $redirect = request_var('redirect', "index.$phpEx");
+    meta_refresh(1, $redirect);
+    
+    trigger_error('LOGOUT_REDIRECT');
 }
 else
 {
