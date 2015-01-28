@@ -17,7 +17,7 @@ echo("<b>Hi " . $user->data['username'] . "!</b><br /><br /><a href='loggedout.p
 }
 else
 {
-echo(<form name="register" action="forum/ucp.php?mode=register" method="post" enctype="multipart/form-data">
+echo(<form name="register" action="forum/includes/ucp/ucp_register.php" method="post" enctype="multipart/form-data">
 	<table width="510" border="0">
 		<tr>
 			<td colspan="2"><p><strong>Registration Form</strong></p></td>
