@@ -36,7 +36,9 @@ http://www.templatemo.com/preview/templatemo_417_grill
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
-                                <a> </a>
+                                <div class="home-account">
+				<a>   </a>
+</div>
                             </div>
                             <div class="col-md-6">
                                 
