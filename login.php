@@ -31,7 +31,8 @@ echo('Log In<br><form action="forum/ucp.php" method="post" enctype="multipart/fo
 <label for="password">Password:</label><input type="password" name="password" /><br />
 <input type="hidden" name="redirect" value="../index.php" /><br />
 <label for="username">Automatic login:</label><input type="checkbox" name="autologin" id="autologin" class="checkbox" /><br />
-<input type="submit" value="login" name="login" />
+<input type="submit" value="login" name="Login" />
+<input type="submit" value="register.php" name="Register" />
 </form>');
 } ?>
 
