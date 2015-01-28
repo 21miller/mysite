@@ -37,7 +37,7 @@ http://www.templatemo.com/preview/templatemo_417_grill
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="home-account">
-                                 <a> </a>
+                                 <a>  </a>
                                 </div>
                             </div>
                             <div class="col-md-6">
