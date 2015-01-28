@@ -1,141 +1,87 @@
 <!DOCTYPE html>
-<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
-<head>
-<meta charset="utf-8">
-{META}
-<title><!-- IF UNREAD_NOTIFICATIONS_COUNT -->({UNREAD_NOTIFICATIONS_COUNT}) <!-- ENDIF --><!-- IF not S_VIEWTOPIC and not S_VIEWFORUM -->{SITENAME} &rsaquo; <!-- ENDIF --><!-- IF S_IN_MCP -->{L_MCP} &rsaquo; <!-- ELSEIF S_IN_UCP -->{L_UCP} &rsaquo; <!-- ENDIF -->{PAGE_TITLE}<!-- IF S_VIEWTOPIC or S_VIEWFORUM --> &rsaquo; {SITENAME}<!-- ENDIF --></title>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>NEWB Squad - An EvE Online Corp</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
 
-<!-- IF S_ENABLE_FEEDS -->
-	<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" /><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{U_FEED}?mode=forums" /><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{U_FEED}?mode=topics" /><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{U_FEED}?mode=topics_active" /><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}" /><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
-<!-- ENDIF -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,300,500,500italic,700,900">
+        <!--
+        Artcore Template
+		http://www.templatemo.com/preview/templatemo_423_artcore
+        -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/templatemo-misc.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
+        <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
 
-<!-- IF U_CANONICAL -->
-	<link rel="canonical" href="{U_CANONICAL}" />
-<!-- ENDIF -->
 
-<link rel="stylesheet" href="{T_STYLESHEET_LINK}" type="text/css" />
-<link rel="stylesheet" href="{T_STYLESHEET_LANG_LINK}" type="text/css" />
+        <section id="pageloader">
+            <div class="loader-item fa fa-spin colored-border"></div>
+        </section> <!-- /#pageloader -->
 
-<script type="text/javascript">
-// <![CDATA[
-
-function popup(url, width, height, name)
-{
-	if (!name)
-	{
-		name = '_popup';
-	}
-
-	window.open(url.replace(/&amp;/g, '&'), name, 'height=' + height + ',resizable=yes,scrollbars=yes,width=' + width);
-	return false;
-}
-
-function jumpto()
-{
-	var page = prompt('{LA_JUMP_PAGE}{L_COLON}', '{CURRENT_PAGE}');
-	var per_page = '{PER_PAGE}';
-	var base_url = '{BASE_URL|e('js')}';
-
-	if (page !== null && !isNaN(page) && page == Math.floor(page) && page > 0)
-	{
-		if (base_url.indexOf('?') == -1)
-		{
-			document.location.href = base_url + '?start=' + ((page - 1) * per_page);
-		}
-		else
-		{
-			document.location.href = base_url.replace(/&amp;/g, '&') + '&start=' + ((page - 1) * per_page);
-		}
-	}
-}
-
-/**
-* Find a member
-*/
-function find_username(url)
-{
-	popup(url, 760, 570, '_usersearch');
-	return false;
-}
-
-/**
-* Mark/unmark checklist
-* id = ID of parent container, name = name prefix, state = state [true/false]
-*/
-function marklist(id, name, state)
-{
-	var parent = document.getElementById(id) || document[id];
-
-	if (!parent)
-	{
-		return;
-	}
-
-	var rb = parent.getElementsByTagName('input');
-
-	for (var r = 0; r < rb.length; r++)
-	{
-		if (rb[r].name.substr(0, name.length) == name)
-		{
-			rb[r].checked = state;
-		}
-	}
-}
-
-<!-- IF ._file -->
-
-	/**
-	* Play quicktime file by determining it's width/height
-	* from the displayed rectangle area
-	*
-	* Only defined if there is a file block present.
-	*/
-	function play_qt_file(obj)
-	{
-		var rectangle = obj.GetRectangle();
-
-		if (rectangle)
-		{
-			rectangle = rectangle.split(',')
-			var x1 = parseInt(rectangle[0]);
-			var x2 = parseInt(rectangle[2]);
-			var y1 = parseInt(rectangle[1]);
-			var y2 = parseInt(rectangle[3]);
-
-			var width = (x1 < 0) ? (x1 * -1) + x2 : x2 - x1;
-			var height = (y1 < 0) ? (y1 * -1) + y2 : y2 - y1;
-		}
-		else
-		{
-			var width = 200;
-			var height = 0;
-		}
-
-		obj.width = width;
-		obj.height = height + 16;
-
-		obj.SetControllerVisible(true);
-
-		obj.Play();
-	}
-<!-- ENDIF -->
-
-// ]]>
-</script>
-
-<!-- EVENT overall_header_head_append -->
-
-{$STYLESHEETS}
-
-<!-- EVENT overall_header_stylesheets_after -->
-
-</head>
+        <header class="site-header container-fluid">
+            <div class="top-header">
+                <div class="logo col-md-6 col-sm-6">
+                    <h1><a href="index.html"><em>NEWB</em>Squad</a></h1>
+                    <span>An EvE Online Corp</span>
+                </div> <!-- /.logo -->
+                <div class="social-top col-md-6 col-sm-6">
+                    <ul>
+                    <?php include("login.php"); ?>
+                    </ul>
+                </div> <!-- /.social-top -->
+            </div> <!-- /.top-header -->
+            <div class="main-header">
+                <div class="row">
+                    <div class="main-header-left col-md-3 col-sm-6 col-xs-8">
+                        
+                        <div id="search-overlay">
+                            <a href="#search-overlay" class="close-search"><i class="fa fa-times-circle"></i></a>
+                            <div class="search-form-holder">
+                                <h2>Type keywords and hit enter</h2>
+                                <form id="search-form" action="#">
+                                    <input type="search" name="s" placeholder="" autocomplete="off" />
+                                </form>
+                            </div>
+                        </div><!-- #search-overlay -->
+                        <a href="#" class="btn-left arrow-left fa fa-angle-left"></a>
+                        <a href="#" class="btn-left arrow-right fa fa-angle-right"></a>
+                    </div> <!-- /.main-header-left -->
+                    <div class="menu-wrapper col-md-9 col-sm-6 col-xs-4">
+                        <a href="#" class="toggle-menu visible-sm visible-xs"><i class="fa fa-bars"></i></a>
+                        <ul class="sf-menu hidden-xs hidden-sm">
+                            <li class="active"><a href="index.php">Home</a></li>
+                            <li><a> text </a></li>
+                            <li><a> text </a></li>
+                            <li><a> text </a></li>
+                            <li><a> text </a></li>
+                        </ul>
+                    </div> <!-- /.menu-wrapper -->
+                </div> <!-- /.row -->
+            </div> <!-- /.main-header -->
+            <div id="responsive-menu">
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a> text </a>/li>
+                    <li><a> text </a></li>
+                    <li><a> text </a></li>
+                    <li><a> text </a></li>
+                </ul>
+            </div>
+        </header> <!-- /.site-header -->
 <body class="{S_CONTENT_DIRECTION} {BODY_CLASS}">
 
 <!-- EVENT overall_header_body_before -->
