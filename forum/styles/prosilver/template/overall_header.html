@@ -27,15 +27,27 @@
 	Modified by:
 -->
 
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href="{T_THEME_PATH}/print.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" type="text/css" media="print" title="printonly" />
+<!-- IF S_ALLOW_CDN --><link href="//fonts.googleapis.com/css?family=Open+Sans:600&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic,greek-ext,greek,vietnamese" rel="stylesheet" type="text/css" media="screen, projection" /><!-- ENDIF -->
+<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+<link href="{T_STYLESHEET_LANG_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+<link href="{T_THEME_PATH}/responsive.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" type="text/css" media="only screen and (max-width: 700px), only screen and (max-device-width: 700px)" />
 
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/font-awesome.css">
-        <link rel="stylesheet" href="css/templatemo_style.css">
-        <link rel="stylesheet" href="css/templatemo_misc.css">
-        <link rel="stylesheet" href="css/flexslider.css">
-        <link rel="stylesheet" href="css/testimonails-slider.css">
-		<script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+	<link href="{T_THEME_PATH}/bidi.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- ENDIF -->
+
+<!-- IF S_PLUPLOAD -->
+	<link href="{T_THEME_PATH}/plupload.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- ENDIF -->
+
+<!--[if lte IE 9]>
+	<link href="{T_THEME_PATH}/tweaks.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" type="text/css" media="screen, projection" />
+<![endif]-->
+
+<!-- EVENT overall_header_head_append -->
+
+{$STYLESHEETS}
 
 <!-- EVENT overall_header_stylesheets_after -->
 
@@ -50,11 +62,27 @@
 		<div class="headerbar">
 			<div class="inner">
 
-			
+			<div id="site-description">
+				<a id="logo" class="logo" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->">{SITE_LOGO_IMG}</a>
+				<h1>{SITENAME}</h1>
+				<p>{SITE_DESCRIPTION}</p>
+				<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
+			</div>
 
-			
+			<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+			<div id="search-box" class="search-box search-header">
+				<form action="{U_SEARCH}" method="get" id="search">
+				<fieldset>
+					<input name="keywords" id="keywords" type="search" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search tiny" size="20" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
+					<button class="button icon-button search-icon" type="submit" title="{L_SEARCH}">{L_SEARCH}</button>
+					<a href="{U_SEARCH}" class="button icon-button search-adv-icon" title="{L_SEARCH_ADV}">{L_SEARCH_ADV}</a>
+					{S_SEARCH_HIDDEN_FIELDS}
+				</fieldset>
+				</form>
+			</div>
+			<!-- ENDIF -->
 
-			
+			</div>
 		</div>
 
 		<!-- INCLUDE navbar_header.html -->
