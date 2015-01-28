@@ -36,16 +36,7 @@ http://www.templatemo.com/preview/templatemo_417_grill
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
-                                <div id="nav-profile-dropdown" class="btn-group navbar-right">
-    <button data-toggle="dropdown" class="btn btn-warning navbar-btn dropdown-toggle" type="button">
-        <i class="glyphicon glyphicon-user"></i><span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu">
-        <li>
-            <?php include("login.php"); ?>
-        </li>
-    </ul>
-</div>
+                                <a> </a>
                             </div>
                             <div class="col-md-6">
                                 
